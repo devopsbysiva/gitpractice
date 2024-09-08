@@ -8,7 +8,7 @@ then
     exit 1
 fi
 
-dnf list installed git
+dnf list installed gitu
 
 if [ $? -ne 0 ]
 then
