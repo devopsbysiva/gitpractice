@@ -7,4 +7,4 @@ number2=$2
 
 sum=$((number1+number2))
 
-echo the sum of $number1 and $number2 is $sum"
+echo "the sum of $number1 and $number2 is $sum"
