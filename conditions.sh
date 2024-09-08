@@ -18,6 +18,6 @@ then
     exit 1
 fi
 
-dnf list installed gitu
+dnf list installed git
 
 validating $?
