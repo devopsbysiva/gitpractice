@@ -20,7 +20,7 @@ else
 fi
 }
 
-syntax()
+syntax
 USERID=$(id -u) # THE USER ID FOR ROOT IS ALWAYS '0'
 if [ $USERID -ne 0 ]
 then
