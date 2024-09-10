@@ -17,12 +17,13 @@ dnf list installed $PACKAGE_NAME
 if [ $? -ne 0 ]
 then 
     dnf install $PACKAGE_NAME -y
+
     if [ $? -eq 0 ]
     then 
-        echo "$PACKAGE successfully installed"
+        echo "$PACKAGE_NAME successfully installed"
     fi
 else
-    echo "the package is already installed"
+    echo "the $PACKAGE_NAME is already installed"
 fi
 
 
