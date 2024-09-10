@@ -3,10 +3,12 @@
 #then check for the package if already exist or not.  --> done
 #if already exist then show as this is already installed no need to install.
 #if dosen't exist then install the package and show message as successfully installed.
+R="\e[31m"
+N="\e[0m"
 syntax(){
 if [ $# -eq 0 ]
 then
-    echo "promt :: $0 packagename"
+    echo "$R promt :: $0 packagename"
     exit 1
 fi
 }
