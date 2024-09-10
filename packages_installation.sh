@@ -4,6 +4,15 @@
 #if already exist then show as this is already installed no need to install.
 #if dosen't exist then install the package and show message as successfully installed.
 
+vALIDATE(){
+if [ $1 -ne 0 ]
+then 
+    echo "$2 is FAILED"
+else
+    echo "$2 is SUCCESS"
+fi
+}
+
 USERID=$(id -u) # THE USER ID FOR ROOT IS ALWAYS '0'
 if [ $USERID -ne 0 ]
 then
@@ -14,18 +23,7 @@ fi
 PACKAGE_NAME=$1
 
 dnf list installed $PACKAGE_NAME
-if [ $? -ne 0 ]
-then 
-    dnf install $PACKAGE_NAME -y
-
-    if [ $? -eq 0 ]
-    then 
-        echo "$PACKAGE_NAME successfully installed"
-    fi
-    
-else
-    echo "the $PACKAGE_NAME is already installed"
-fi
+vALIDATE $? $PACKAGE_NAME
 
 
     
