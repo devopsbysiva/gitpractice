@@ -1,0 +1,15 @@
+# check user is root or not?
+#if the user is root then proceed further else stop execution and send alert as please run with sudo privilges.
+#then check for the package if already exist or not.
+#if already exist then show as this is already installed no need to install.
+#if dosen't exist then install the package and show message as successfully installed.
+
+USERID=$(id -u) # THE USER ID FOR ROOT IS ALWAYS '0'
+if [ $(USERID) -ne 0 ]
+then
+    echo "please Execute the script with sudo privileges"
+    exit 1
+fi
+
+dnf list installed mysql
+
