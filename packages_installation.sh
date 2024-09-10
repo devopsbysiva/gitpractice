@@ -22,6 +22,7 @@ then
     then 
         echo "$PACKAGE_NAME successfully installed"
     fi
+    
 else
     echo "the $PACKAGE_NAME is already installed"
 fi
