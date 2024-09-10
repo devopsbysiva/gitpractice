@@ -11,10 +11,12 @@ then
     exit 1
 fi
 
-dnf list installed mysql
+PACKAGE_NAME=$1
+
+dnf list installed $PACKAGE_NAME
 if [ $? -ne 0 ]
 then 
-    dnf install mysql -y
+    dnf install $PACKAGE_NAME -y
     if [ $? -eq 0 ]
     then 
         echo "successfully installed"
