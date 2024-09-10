@@ -5,7 +5,7 @@
 #if dosen't exist then install the package and show message as successfully installed.
 
 USERID=$(id -u) # THE USER ID FOR ROOT IS ALWAYS '0'
-if [ $(USERID) -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo "please Execute the script with sudo privileges"
     exit 1
