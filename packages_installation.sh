@@ -19,7 +19,7 @@ then
     dnf install $PACKAGE_NAME -y
     if [ $? -eq 0 ]
     then 
-        echo "successfully installed"
+        echo "$PACKAGE successfully installed"
     fi
 else
     echo "the package is already installed"
