@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # check user is root or not? --done
 #if the user is root then proceed further else stop execution and send alert as please run with sudo privilges. --> done
 #then check for the package if already exist or not.  --> done
@@ -11,7 +13,7 @@ syntax(){
     exit 1
 }
 
-vALIDATE(){
+VALIDATE(){
 if [ $1 -ne 0 ]
 then 
     echo "$2 is FAILED"
@@ -32,12 +34,18 @@ then
     syntax
 fi
 
-PACKAGE_NAME=$1
-
-dnf list installed $PACKAGE_NAME
-vALIDATE $? $PACKAGE_NAME
-
-
+for PACKAGE_NAME in $@ 
+do
+    dnf list installed $PACKAGE_NAME
+    if [ $? -ne 0 ]
+    then 
+        echo " $PACKAGE_NAME is preparing to install "
+        dnf install $PACKAGE_NAME -y
+        VALIDATE $? $PACKAGE_NAME
+    else
+        echo " $PACKAGE_NAME is already available"
+    fi
+done
     
 
 
