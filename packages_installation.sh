@@ -5,6 +5,7 @@
 #if dosen't exist then install the package and show message as successfully installed.
 R="\e[31m"
 N="\e[0m"
+
 syntax(){
 if [ $# -eq 0 ]
 then
@@ -22,13 +23,14 @@ else
 fi
 }
 
-syntax
 USERID=$(id -u) # THE USER ID FOR ROOT IS ALWAYS '0'
 if [ $USERID -ne 0 ]
 then
     echo "please Execute the script with sudo privileges"
     exit 1
 fi
+
+syntax
 
 PACKAGE_NAME=$1
 
