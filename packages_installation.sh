@@ -3,11 +3,12 @@
 #then check for the package if already exist or not.  --> done
 #if already exist then show as this is already installed no need to install.
 #if dosen't exist then install the package and show message as successfully installed.
-
+syntax(){
 if [ $# -eq 0 ]
 then
     echo "promt :: $0 packagename"
 fi
+}
 
 vALIDATE(){
 if [ $1 -ne 0 ]
@@ -18,6 +19,7 @@ else
 fi
 }
 
+syntax()
 USERID=$(id -u) # THE USER ID FOR ROOT IS ALWAYS '0'
 if [ $USERID -ne 0 ]
 then
