@@ -1,6 +1,6 @@
-# check user is root or not?
-#if the user is root then proceed further else stop execution and send alert as please run with sudo privilges.
-#then check for the package if already exist or not.
+# check user is root or not? --done
+#if the user is root then proceed further else stop execution and send alert as please run with sudo privilges. --> done
+#then check for the package if already exist or not.  --> done
 #if already exist then show as this is already installed no need to install.
 #if dosen't exist then install the package and show message as successfully installed.
 
@@ -12,4 +12,18 @@ then
 fi
 
 dnf list installed mysql
+if [ $? -ne 0 ]
+then 
+    dnf install mysql -y
+    if [ $? -eq 0 ]
+    then 
+        echo "successfully installed"
+    fi
+else
+    echo "the package is already installed"
+fi
+
+
+    
+
 
