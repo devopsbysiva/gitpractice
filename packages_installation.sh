@@ -6,7 +6,7 @@
 
 if [ $# -eq 0 ]
 then
-    echo "promt :: $0 packagename
+    echo "promt :: $0 packagename"
 fi
 
 vALIDATE(){
