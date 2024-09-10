@@ -8,7 +8,7 @@ N="\e[0m"
 syntax(){
 if [ $# -eq 0 ]
 then
-    echo "$R promt :: $0 packagename"
+    echo -e "$R promt :: $0 packagename"
     exit 1
 fi
 }
