@@ -1,6 +1,6 @@
 #!/bin/bash
 LOG_FOLDER="/var/log/shell_script"
-SCRIPT_NAME= $(echo $0 |cut -d "." -f1)
+SCRIPT_NAME= $(echo $0 | cut -d "." -f1)
 DATE=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="/$LOG_FOLDER/$(SCRIPT_NAME)-$DATE.log"
 mkdir -p $LOG_FOLDER
