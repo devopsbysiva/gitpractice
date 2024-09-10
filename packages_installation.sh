@@ -4,6 +4,11 @@
 #if already exist then show as this is already installed no need to install.
 #if dosen't exist then install the package and show message as successfully installed.
 
+if [ $# -eq 0 ]
+then
+    echo "promt :: $0 packagename
+fi
+
 vALIDATE(){
 if [ $1 -ne 0 ]
 then 
