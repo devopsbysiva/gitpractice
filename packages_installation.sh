@@ -7,11 +7,8 @@ R="\e[31m"
 N="\e[0m"
 
 syntax(){
-if [ $# -eq 0 ]
-then
     echo -e "$R promt :: $0 packagename"
     exit 1
-fi
 }
 
 vALIDATE(){
@@ -30,7 +27,10 @@ then
     exit 1
 fi
 
-syntax
+if [ $# -eq 0 ]
+then 
+    syntax
+fi
 
 PACKAGE_NAME=$1
 
