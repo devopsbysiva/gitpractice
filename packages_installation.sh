@@ -7,6 +7,7 @@ syntax(){
 if [ $# -eq 0 ]
 then
     echo "promt :: $0 packagename"
+    exit 1
 fi
 }
 
