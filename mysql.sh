@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #genearting logs .
-LOG_FOLDER=/var/messages/mysql
+LOG_FOLDER=/var/log/messages/mysql
 SCRIPT_NAME=$(echo $0|cut -d "." -f1)
 TIMESTAMP=$(date +%y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
