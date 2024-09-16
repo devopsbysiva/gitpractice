@@ -5,9 +5,6 @@
 #2.find the logs greater then 14 days .
 #3. remove the logs.
 
-LOG_FOLDER="/var/log/shell_logs"
-RETENTION_TIME=14
+LOG_FOLDER_PATH=$1
 
-cd $LOG_FOLDER
-LOGS=$(find . -name "*.log" -mtime +14)
-echo "$LOGS"
+echo $LOG_FOLDER_PATH
