@@ -10,7 +10,7 @@
 
 SOU_DIR=$1
 DES_DIR=$2
-NO_OF_DAYS={$3:-14}
+NO_OF_DAYS=${3:-14}
 TIMESTAMP=$(date +%y-%m-%d-%H-%M-%S)
 
 if [ ! -d $SOU_DIR ]  # -d checks for directory, ! -false
