@@ -19,5 +19,6 @@ fi
 
 while IFS= read -r line
 do
-  echo $line
+  echo "Removing file $line"
+  rm -rf $line
 done <<< $REMOVABLE_LOGS
