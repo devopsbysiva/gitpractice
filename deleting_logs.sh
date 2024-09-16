@@ -7,9 +7,17 @@
 
 LOG_FOLDER_PATH="/var/log/shell_logs"
 
-REMOVABLE_LOGS=$(find . -name "*.log" -mtime +14)
+REMOVABLE_LOGS=$(find $LOG_FOLDER_PATH -name "*.log" -mtime +14)
+
+if [ ! -d $LOG_FOLDER_PATH ]
+then
+    echo "path doesn't exist"
+    exit 1
+else
+    echo "path exist checking for logs"
+fi
 
 while IFS= read -r line
 do
   echo $line
-done <<<$REMOVABLE_LOGS
+done <<< $REMOVABLE_LOGS
