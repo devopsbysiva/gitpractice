@@ -9,5 +9,5 @@ LOG_FOLDER="/var/log/shell_logs"
 RETENTION_TIME=14
 
 cd $LOG_FOLDER
-LOGS=$(find . -name "*.log" -mtime +$RETENTION_TIME)
+LOGS=$(find . -name "*.log" -mtime +14)
 echo "$LOGS"
