@@ -7,4 +7,6 @@
 
 LOG_FOLDER_PATH="/var/log/shell_logs"
 
-echo $LOG_FOLDER_PATH
+REMOVABLE_LOGS=$(find . -name "*.log" -mtime +14)
+
+echo $REMOVABLE_LOGS
