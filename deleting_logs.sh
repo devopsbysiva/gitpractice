@@ -9,7 +9,7 @@ LOG_FOLDER_PATH="/var/log/shell_logs"
 
 REMOVABLE_LOGS=$(find . -name "*.log" -mtime +14)
 
-while IFS=read -r line
+while IFS= read -r line
 do
   echo $line
 done <<< $REMOVABLE_LOGS
