@@ -16,22 +16,24 @@ TIMESTAMP=$(date +%y-%m-%d-%H-%M-%S)
 if [ ! -d $SOU_DIR ]  # -d checks for directory, ! -false
 then
     echo "there is no such directory: $SOU_DIR"
+    exit 1
 fi
 
-if [ ! -d DES_DIR ]  # -d checks for directory, ! -false
+if [ ! -d $DES_DIR ]  # -d checks for directory, ! -false
 then    
     echo "there is no such directory: $DES_DIR"
+    exit 1
 fi
 
 #zip [file_name.zip] [file_name] (syntax)
 
 ZIP_FILE=$DES_DIR/app_log-$TIMESTAMP.zip
 
-FILES=$(find $SOU_DIR -name "*.log" -mtime $NO_OF_DAYS)
+FILES=$(find $SOU_DIR -name "*.log" -mtime +$NO_OF_DAYS)
 
 if [ ! -z $FILES ]  # -z checks for zero files in a directory.
 then
-  find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
+  find ${SOU_DIR} -name "*.log" -mtime +$NO_OF_DAYS | zip "$ZIP_FILE" -@
 
   if [ -f $ZIP_FILE ] # -f finds for a  file ina directory.
   then
