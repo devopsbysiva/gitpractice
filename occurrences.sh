@@ -10,12 +10,13 @@ USAGE (){
     echo "USAGE : : sh occurance.sh <argument>"
 }
 
-if [ $# -eq 0 ]
+if [ $# -eq 0 ]  # '$#' a special variable counts the arugumnets passed to it 
 then
     USAGE
 fi
 
-if [ ! -f $FILES ]
+if [ ! -f $FILES ] 
+
 then
     echo "no such file is found : $FILES"
 fi
